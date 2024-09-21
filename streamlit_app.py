@@ -16,8 +16,20 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain.retrievers.multi_query import MultiQueryRetriever
 from typing import List, Tuple, Dict, Any, Optional
 
+# Streamlit page configuration
+st.set_page_config(
+    page_title="Ollama PDF RAG Streamlit UI",
+    page_icon="🎈",
+    layout="wide",
+    initial_sidebar_state="collapsed",
+)
+
 # Logging configuration
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
 logger = logging.getLogger(__name__)
 
 @st.cache_resource(show_spinner=True)
